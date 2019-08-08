@@ -1,0 +1,114 @@
+
+
+body {
+  padding-top: 50px;
+  font-family: 'Lato', sans-serif;
+  background-color:#FFFFFF;
+}
+.starter-template {
+  height: auto;
+  padding: 40px 50px;
+  background-color: #FFFFFF;
+}
+div.row{
+}
+#special{
+	background-color: #FFFFFF;
+}
+.jumbotron {
+  text-align: center;
+  background-color: transparent;
+}
+ul.navbar-nav{
+	float: right;
+}
+.navbar-inverse{
+	background-color: #1f282d;
+}
+.navbar-inverse .navbar-nav > li > a:focus, .navbar-inverse .navbar-nav > li > a:hover{
+	background-color: #303C44;
+}
+
+.navbar-inverse .navbar-nav > li > a{
+	color: #FFFFFF;
+}	
+.navbar > .container .navbar-brand, .navbar > .container-fluid .navbar-brand{
+	color: #FFFFFF;
+}
+.global-footer{
+	padding: 20px 20px;
+	margin: 0px;
+	font-size: 150%;
+}
+
+table, th, td {
+	border: 1px solid black;
+	padding: 5px 5px;
+}
+
+ul, ol{
+	list-style-type : none;
+}
+.footer-left{
+	float:left;
+	padding:0px;
+}
+.footer-right{
+	float:right;
+}
+
+footer {
+	position:fixed;
+	bottom: 0px;
+	width: 100%;
+	text-align:center;
+}
+
+
+#wrapper {
+  margin-right: 200px;
+}
+#content {
+  float: right;
+  width: 100%;
+  margin-right:-275px;
+  border-style: inset;
+  background-color: #FFFFFF;
+}
+#sidebar {
+  float: left;
+  width: 275px;
+}
+#sidebar2 {
+  float: left;
+  width: 600px;
+  margin-bottom:150px;
+}
+#sidebarR {
+  float: right;
+  width: 500px;
+  margin-bottom: 200px;
+}
+#cleared {
+  clear: both;
+}
+
+button {
+  background: #f7f7f7;
+  background-image: -webkit-linear-gradient(top, #f7f7f7, #b3b9bd);
+  background-image: -moz-linear-gradient(top, #f7f7f7, #b3b9bd);
+  background-image: -ms-linear-gradient(top, #f7f7f7, #b3b9bd);
+  background-image: -o-linear-gradient(top, #f7f7f7, #b3b9bd);
+  background-image: linear-gradient(to bottom, #f7f7f7, #b3b9bd);
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  -webkit-box-shadow: 0px 1px 10px #666666;
+  -moz-box-shadow: 0px 1px 10px #666666;
+  box-shadow: 0px 1px 10px #666666;
+  font-family: 'Lato', sans-serif;
+  color: #6b666b;
+  font-size: 13px;
+  padding: 5px 8px 5px 8px;
+  text-decoration: none;
+}

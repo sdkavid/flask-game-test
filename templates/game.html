@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<head>
+	<title>Game Test</title>
+	<link rel="stylesheet" href="/static/css/game.css"/>
+
+	<script>
+
+		window.requestAnimFrame = (function() {
+			return	window.requestAnimationFrame		||
+					window.webkitRequestAnimationFrame	||
+					window.mozRequestAnimationFrame		||
+					window.oRequestAnimationFrame		||
+					window.msRequestAnimationFrame		||
+					function( callback ){
+						window.setTimeout(callback, 1000 / 60);
+					};
+		})();
+
+		var canvas = null;
+		var backImg = null;
+		var img = null;
+		var ctx = null;
+		var box = null;
+		var imageReady = false;
+		var frame = 0;
+		var lastUpdateTime = 0;
+		var acDelta = 0;
+		var msPerFrame = 80;
+
+		function onload() {
+			canvas = document.getElementById('gameCanvas');
+			ctx = canvas.getContext('2d');
+			box = new Image();
+			box.src = '/static/img/playerone/box.png';
+			backImg = new Image();
+			backImg.src = '/static/img/playerone/background.png';
+			img = new Image();
+			img.src = '/static/img/playerone/test2.png';
+			img.onload = loaded();
+			resize();
+		}
+
+		function loaded() {
+			imageReady = true;
+			setTimeout(update, 1000 / 60);
+			redraw();
+		}
+
+		function resize() {
+			canvas.width = 800;
+			canvas.height = 460;
+			redraw();
+		}
+
+		function update() {
+			requestAnimFrame(update);
+
+			var delta = Date.now() - lastUpdateTime;
+			//console.log(delta);
+			if (acDelta > msPerFrame)
+			{
+				acDelta = 0;
+				redraw();
+				frame++;
+				if (frame >= 5) frame = 0;
+			} else
+			{
+				acDelta += delta;
+			}
+			lastUpdateTime = Date.now();
+		}
+
+		function redraw() {
+			//ctx.fillStyle = '#FFFFFF';
+			//ctx.fillRect(0, 0, canvas.width, canvas.height);
+			ctx.drawImage(backImg,0,0);
+			ctx.drawImage(box,500,410);
+			ctx.drawImage(box,540,410);
+			ctx.drawImage(box,580,410);
+			ctx.drawImage(box,560,375);
+			ctx.drawImage(box,600,375);
+			ctx.drawImage(box,620,410);
+
+			ctx.drawImage(box,100,410);
+			ctx.drawImage(box,140,410);
+			ctx.drawImage(box,180,410);
+			ctx.drawImage(box,100,340);
+			ctx.drawImage(box,100,375);
+			ctx.drawImage(box,220,410);
+			if (imageReady){
+				ctx.drawImage(img, frame*120, 0, 120, 120, canvas.width/2 - 100, canvas.height/2 + 110, 120, 120);
+			}
+		}		
+
+	</script>
+</head>
+
+<body onload='onload()' onresize='resize()'>
+	<h3>GAME TEST DEMO<br>Arrow keys to move, and space to jump</h3>
+
+		<canvas id="gameCanvas"></canvas>
+
+	<div style="display:none;">
+		<img id="image" src="/static/img/playerone/roro.png" width="80" height="120">
+		<img id="run1" src="/static/img/playerone/run1.png" width="80" height="120">
+		<img id="run2" src="/static/img/playerone/run2.png" width="80" height="120">
+		<img id="run3" src="/static/img/playerone/run3.png" width="80" height="120">
+		<img id="run4" src="/static/img/playerone/run4.png" width="80" height="120">
+		<img id="run5" src="/static/img/playerone/run5.png" width="80" height="120">
+	</div>
+
+</body>
+
